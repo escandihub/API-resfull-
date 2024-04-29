@@ -69,7 +69,7 @@ php artisan serve
 "address": "Av. Siempre viva",
 "token": "0e27b7350801a1845df28bf779a7e46e3d0266f0"
 }
-´´´
+```
 ## delete
 * /api/customer/{dni}
 ```
@@ -80,6 +80,7 @@ php artisan serve
 ## get
 ** para optener todos los usuarios Activos 
 * /api/customer/
+
 ```
 {
 "token": "0e27b7350801a1845df28bf779a7e46e3d0266f0"
