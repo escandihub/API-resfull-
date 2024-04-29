@@ -29,12 +29,12 @@ php artisan key:generate
 ```
 php artisan migrate 
 php artisan db:seed
-
+```
 ## Finalmente se puede ejecutar el servidor
 
 ```
 php artisan serve 
-
+``` 
 
 # API es necesario generar el token para acceder a consumir los recursos
 * /api/register
@@ -55,11 +55,10 @@ php artisan serve
 }
 ```
 
-* /api/customer
 
 ## post
 * /api/customer
-
+```
 {
 "dni": "ATH89P1P2",
 "id_reg": "1",
@@ -70,14 +69,19 @@ php artisan serve
 "address": "Av. Siempre viva",
 "token": "0e27b7350801a1845df28bf779a7e46e3d0266f0"
 }
+´´´
 ## delete
 * /api/customer/{dni}
+```
 {
 "token": "0e27b7350801a1845df28bf779a7e46e3d0266f0"
 }
+```
 ## get
 ** para optener todos los usuarios Activos 
 * /api/customer/
+```
 {
 "token": "0e27b7350801a1845df28bf779a7e46e3d0266f0"
 }
+```
