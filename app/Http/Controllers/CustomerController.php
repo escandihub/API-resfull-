@@ -10,6 +10,7 @@ class CustomerController extends Controller
 {
     public function __construct()
     {
+        $this->middleware('storeCustomer', ['only' => ['store']]);
         // $this->middleware('deleteCustomer', ['only' => ['destroy']]);
         // $this->middleware('AuthClient');
     }

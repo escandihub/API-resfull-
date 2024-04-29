@@ -17,8 +17,7 @@ class DeleteValidationMiddleware
      */
     public function handle($request, Closure $next): Response
     {
-        \Log::info($request);
-        $customer = customer::where('dni',$request)->first();
+        $customer = customer::where('dni', $request)->first();
         
         if ($customer) {
             if ($customer->status == 'A') {

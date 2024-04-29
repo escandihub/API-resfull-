@@ -17,6 +17,7 @@ class LogMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        \Log::info('funcionando');
         $response = $next($request);
         Log::create([
             'ip_address'        => $request->ip(),
@@ -25,6 +26,6 @@ class LogMiddleware
             'status_code'       => $response->status(),
         ]);
 
-        return $next($request);
+        return  $response;
     }
 }

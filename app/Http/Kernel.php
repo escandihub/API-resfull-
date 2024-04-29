@@ -66,7 +66,11 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'storeCustomer' => \App\Http\Middleware\StoreValidationMiddleware::class,
         'AuthClient' => \App\Http\Middleware\AuthenticationMiddleware::class, #custom middle
-        // 'deleteCustomer' => \App\Http\Middleware\DeleteValidationMiddleware::class, #custom middle
+        'deleteCustomer' => \App\Http\Middleware\DeleteValidationMiddleware::class, #custom middle
+        'LogRequest' => \App\Http\Middleware\LogMiddleware::class, #custom middle
+        'LogServer' => \App\Http\Middleware\LogServerMiddleware::class, #custom middle
+        'registerUser' => \App\Http\Middleware\registerUserMiddleware::class,
+        'loginUser' => \App\Http\Middleware\LoginUserMiddleware::class,
         
         
     ];

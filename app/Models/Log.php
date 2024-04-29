@@ -10,5 +10,5 @@ class Log extends Model
     use HasFactory;
 
     
-    protected $fillable = [ 'ip_address','method','url','status_code'];
+    protected $fillable = [ 'ip_address','method','url','status_code', 'response_content'];
 }
