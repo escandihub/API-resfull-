@@ -44,8 +44,7 @@ class CustomerController extends Controller
         // usuario activo login - logeado
         // if ($request->status == 'activado') {
             return response()->json([
-                "data" => customer::where('status', 'A')->with('commune','region')->get(),
-                'success' => true
+                "data" => customer::where('status', 'A')->with('commune','region')->get()
             ], 200);
         // }
         

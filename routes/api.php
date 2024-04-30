@@ -22,11 +22,11 @@ use App\Http\Controllers\AuthController;
 
 
 //public access
-Route::post('login', [AuthController::class, 'login'])->middleware('loginUser');
-Route::post('register', [AuthController::class, 'store'])->middleware('registerUser');
+Route::post('login', [AuthController::class, 'login'])->middleware(['loginUser','SetResponse']);
+Route::post('register', [AuthController::class, 'store'])->middleware('registerUser','SetResponse');
 Route::resource('customer', CustomerController::class)
 ->except('show','update','create','edit')
-->middleware(['LogServer','LogRequest','AuthClient']);
+->middleware(['LogServer','LogRequest','SetResponse','AuthClient']);
 //AuthClient
 // Route::post('customer', [CustomerController::class, 'store'])
 // ->middleware(LogMiddleware::class,'AuthClient','storeCustomer');

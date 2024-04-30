@@ -71,6 +71,7 @@ class Kernel extends HttpKernel
         'LogServer' => \App\Http\Middleware\LogServerMiddleware::class, #custom middle
         'registerUser' => \App\Http\Middleware\registerUserMiddleware::class,
         'loginUser' => \App\Http\Middleware\LoginUserMiddleware::class,
+        'SetResponse' => \App\Http\Middleware\StatusServiceMiddleware::class,
         
         
     ];
