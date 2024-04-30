@@ -11,7 +11,7 @@ class CustomerController extends Controller
     public function __construct()
     {
         $this->middleware('storeCustomer', ['only' => ['store']]);
-        // $this->middleware('deleteCustomer', ['only' => ['destroy']]);
+        $this->middleware('deleteCustomer', ['only' => ['destroy']]);
         // $this->middleware('AuthClient');
     }
 
@@ -54,14 +54,8 @@ class CustomerController extends Controller
     /** validar algo mas */
     function destroy($dni) {
         $customer = customer::where('dni', $dni)->first();
-        if ($customer) {
-            if ($customer->status == 'A') {
-                $customer->delete();
-                return response()->json(['message' => 'Registro eliminado.']);
-            }
-        }
-        return response()->json([
-            "message" => 'Registro no existe'
-        ], 422);
+        $customer->delete();
+        return response()->json(
+            ['message' => 'Registro eliminado.'], 200);
     }
 }
